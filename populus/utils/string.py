@@ -1,8 +1,8 @@
 import sys
 
 from eth_utils import (
-    force_bytes,
-    force_text,
+    to_bytes,
+    to_text,
 )
 
 
@@ -14,6 +14,5 @@ def normalize_class_name(value):
     * Python 3.5 doesn't care.
     """
     if sys.version_info.major == 2:
-        return force_bytes(value)
-    else:
-        return force_text(value)
+        return to_bytes(value)
+    return to_text(value)
